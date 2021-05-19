@@ -1,0 +1,373 @@
+@import url("anim.css");
+
+:root {
+  --nav-opacity: 1;
+  --flex-width: 70%;
+  --moving-x: 0px;
+  --moving-y: 0px;
+  --primary-color: rgb(151, 217, 226);
+  --secondary-color: black;
+  --backdrop-color: rgb(37, 37, 37);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url(https://c.pxhere.com/photos/72/52/code_code_editor_coding_computer_data_developing_development_ethernet-910940.jpg!d);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: overlay;
+  background-position: var(--moving-x) var(--moving-y);
+}
+
+#Skills,
+#About_Me {
+  padding: 40px 0px 20px 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Raleway";
+  color: inherit;
+  padding: 5px 10px;
+  transition: color 0.5s;
+}
+
+p.fade-tag {
+  line-height: 1.8;
+}
+
+nav.navbar-sticky a:hover {
+  animation-name: hoveritem;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.4s;
+  color: skyblue;
+}
+
+.fade-tag {
+  opacity: 0%;
+}
+
+.fade-in {
+  opacity: 100% !important;
+  transition: opacity 1s ease-in-out;
+}
+
+.fa {
+  padding: 25px;
+  font-size: 30px !important;
+  text-decoration: none;
+  margin: 20px 10px;
+  border-radius: 30%;
+  transition: all 1s ease;
+}
+
+.fa:hover {
+  animation-name: hovericon;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.4s;
+  opacity: 0.7;
+}
+
+[class*="fa-"] {
+  color: white;
+  background: lightblue;
+}
+
+.fa-twitter {
+  background: rgb(143, 227, 255);
+}
+
+.fa-facebook {
+  background: rgb(88, 88, 253);
+  width: 75px;
+  text-align: center;
+}
+
+.fa-linkedin {
+  background: rgb(146, 206, 255);
+}
+
+.fa-google {
+  background: rgb(255, 132, 95);
+}
+
+img.background-pic {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  object-fit: cover;
+  z-index: -10;
+}
+
+nav.navbar-sticky {
+  display: flex;
+  padding: 5px 5%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background: rgb(255, 255, 255, 0);
+  color: white;
+  z-index: 100;
+  transition: all 0.2s ease-in-out;
+}
+
+.change-bg-nav {
+  background: rgb(255, 255, 255, 1) !important;
+  color: black !important;
+  border-radius: 0px 0px 5px 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.content-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 250px;
+  height: auto;
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-list {
+  width: var(--flex-width);
+  height: 90%;
+}
+
+div.content-flex {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+section * {
+  text-shadow: 1px 1px 2px rgb(53, 53, 53, 0.3);
+}
+
+.space-flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  pointer-events: auto;
+}
+
+ul.space-flex li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+section.section-header {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  min-height: 80vh !important;
+}
+
+h1,
+h2 {
+  font-size: 3.5em;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  margin: 0px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+p {
+  color: white;
+  font-size: 1.5em;
+  font-family: "Raleway";
+  text-align: center;
+}
+
+/* ----PROJECT SECTION CLASSES ----- */
+
+.projects-sec {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.projects-sec * {
+  padding: 10px;
+}
+
+.project-flex {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-color: black;
+  padding: 50px;
+}
+
+.project-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin: auto;
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+.project-box {
+  height: 400px;
+  width: 300px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s ease;
+}
+
+.project-box:hover {
+    box-shadow: -10px 10px 2px var(--primary-color);
+
+}
+
+.project-box:hover :nth-child(1) {
+    box-shadow: -3px 3px 2px var(--primary-color);
+
+}
+
+.project-box :nth-child(1) {
+    opacity: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 70%;
+    transform: translateX(-80%);
+    transition: transform 0.7s ease-out, opacity 0.7s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition-delay: 0.5s, 0.5s, 0.1s;
+}
+
+.project-box > :nth-child(2) {
+    opacity: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 30%;
+    transform: translateX(-50%);
+    transition: all 0.7s ease-out;
+    transition-delay: 1s;
+}
+
+.project-box-tran-toggle {
+    transform: translateX(0px) !important;
+    opacity: 100 !important;
+}
+
+.project-box-animation-in {
+  animation: swoopIn 1s ease;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.project-box-animation-out {
+  animation: swoopOut 1s ease;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+/* ---SCROLL BAR EDIT ---*/
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+  transition: background-color ease-in 1s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+
+@media only screen and (max-width: 880px) {
+  :root {
+    --flex-width: 100%;
+  }
+
+  section {
+    justify-content: center;
+  }
+
+  body {
+    background-size: cover;
+  }
+}
+
+@keyframes hovericon {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  25% {
+    transform: rotateZ(25deg);
+  }
+
+  75% {
+    transform: rotateZ(-25deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes hoveritem {
+  0% {
+    transform: translateX(0px);
+  }
+
+  25% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}

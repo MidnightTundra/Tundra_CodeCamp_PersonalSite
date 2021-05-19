@@ -1,0 +1,240 @@
+/*-- Tundra CSS Template --*/
+
+:root {
+    --pad-value: 20px;
+    --change-font-color: black;
+    --change-bg-color: white;
+    --change-alt-bg-color: rgb(232, 245, 255);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: -apple-system, Roboto, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* -- Menu Responsive -- */
+
+.tun-menu {
+    position: absolute;
+    z-index: 10;
+}
+
+[class*="tun-menu-"] {
+    width: 100%;
+    height: auto;
+    padding: var(--pad-value);
+    margin: auto;
+    float: left;
+}
+
+.tun-fixed-menu {
+    display: inline-flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+    padding: 5px;
+    flex-wrap: nowrap;
+    box-shadow: 0 4px 10px -3px gray;
+    background-color: var(--change-bg-color);
+}
+
+.tun-fixed-menu>[class*="tun-box-"] {
+    width: 50%;
+    height: auto;
+}
+
+.tun-menu-1 {
+    width: 12.5%;
+}
+
+.tun-menu-2 {
+    width: 25%;
+}
+
+.tun-menu-3 {
+    width: 37.5%;
+}
+
+.tun-menu-4 {
+    width: 50%;
+}
+
+.tun-menu-5 {
+    width: 62.5%;
+}
+
+.tun-menu-6 {
+    width: 75%;
+}
+
+.tun-menu-7 {
+    width: 87.5%;
+}
+
+.tun-menu-8 {
+    width: 100%;
+}
+
+
+/* Dynamic Nav Menu */
+
+.tunMenuAttr {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    top: 0;
+    background-color: var(--change-alt-bg-color);
+    height: 100vh;
+    width: 0px;
+    box-shadow: 4px 0px 10px -3px gray;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.tunMenuAttr a {
+    width: 80%;
+    white-space: wrap;
+    margin: auto;
+    text-align: left;
+    letter-spacing: 2px;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.tunMenuAttr a.active {
+    color: rgb(213, 197, 255);
+}
+
+.tunMenuAttr a:hover {
+    color: rgb(175, 146, 255);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 13px -15px rgba(0,0,0,0.5);
+}
+
+.tunMenuAttr h2 {
+    margin: auto;
+    font-size: 35px;
+    text-align: center;
+    padding: 25px 50px;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+@media (max-width: 299px) {
+    .tunMenuAttr a {
+        white-space: nowrap;
+    }
+}
+
+
+/* -- Default set is for MOBILE PHONES -- */
+
+[class*="tun-box-"] {
+    width: 100%;
+    height: auto;
+    padding: var(--pad-value);
+    margin: auto;
+    float: left;
+}
+
+.tun-container {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tun-ignore-float {
+    float:none !important;
+}
+
+
+/* For Desktops */
+
+@media only screen and (min-width: 800px) {
+    .tun-box-1 {
+        width: 12.5%;
+    }
+
+    .tun-box-2 {
+        width: 25%;
+    }
+
+    .tun-box-3 {
+        width: 37.5%;
+    }
+
+    .tun-box-4 {
+        width: 50%;
+    }
+
+    .tun-box-5 {
+        width: 62.5%;
+    }
+
+    .tun-box-6 {
+        width: 75%;
+    }
+
+    .tun-box-7 {
+        width: 87.5%;
+    }
+
+    .tun-box-8 {
+        width: 100%;
+    }
+}
+
+
+/* -- Menu Button -- */
+
+
+/* -- Needs onclick=menuButtonChange(this) in container 
+
+ function menuButtonChange (container) {
+    container.classList.toggle("change");
+ }
+
+ */
+/*
+.menu-button-container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-right: auto;
+    margin-left: auto;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+*/

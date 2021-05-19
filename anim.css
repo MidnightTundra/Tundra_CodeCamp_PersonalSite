@@ -1,0 +1,65 @@
+:root {
+    --skill-animation-width-pass: 30%;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes expandObject {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes swoopIn {
+    0% {
+        opacity: 0;
+        
+        transform: TranslateX(-50%) rotate(0deg);
+        
+    }
+
+    100% {
+        opacity: 100;
+        transform: TranslateX(0px) rotate(0deg);
+    }
+}
+
+@keyframes swoopOut {
+    0% {
+        opacity: inherit;
+    }
+    90% {
+        opacity: 0;
+        transform: TranslateX(-50%) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: TranslateX(0) rotate(0deg);
+    }
+}
+
+@keyframes percentageBar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: var(--skill-animation-width-pass);
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

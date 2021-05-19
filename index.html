@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Personal Website by Tundra</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="anim.css">
+    <link rel="stylesheet" href="listdynamic.css">
+    <link rel="stylesheet" href="TundraResponsiveCSSTemplate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="tun-container" id="main-container">
+        <nav class="navbar-sticky" id='navbar'>
+            <a href="#main-container">Placeholder Signature</a>
+            <div style="display: flex; justify-content: space-between; width: 60%;">
+                <a href="#About_Me">About Me</a>
+                <a href="#Skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#Extras">Extras</a>
+            </div>
+        </nav>
+        <!--Pushes page down by viewport height (vertical resolution size)-->
+        <div style="height: 102vh; position: relative; pointer-events: none;"></div>
+
+        <div id="welcome-overlay" style="position: fixed; height: 100%; width: 100%; top: 0px; left: 0px;">
+            <div id="welcome-section" class="content-flex">
+                <div class="space-flex" id="foreground-content_Title">
+                    <h1 class="line-header">Hi, I'm Tundra</h1>
+                    <p>Software Developer & UX/UI Designer</p>
+                </div>
+                <div style="flex-direction: row; display: block;" class="space-flex" id="foreground-content_Social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="" class="fa fa-twitter"></a>
+                    <a href="" class="fa fa-linkedin"></a>
+                    <a href="" class="fa fa-google"></a>
+                </div>
+            </div>
+        </div>
+        <!-- ABOUT ME SECTION -->
+        <section style="justify-content: center; height: 100vh; flex-wrap: nowrap;" class="content-flex section-header"
+            id="About_Me">
+            <!--<div style="width: 100%; align-self: flex-start;"></div>-->
+            <div style="width: 80%" class="space-flex">
+                <h2 class="fade-tag">About Me</h2>
+                <div style="display: none" class="fade-tag divider-line"></div>
+                <p class="fade-tag">Junior Game Developer with a Bachelor's degree in Computer Science. Learned
+                    programming in Object-Oriented
+                    Languages such as C#. I went into university to learn game development and programming and I came
+                    across something I really enjoyed. I created a formula for weapon and character leveling in college
+                    for my first big project. At that point I knew that I enjoyed creating worlds this way. I made the
+                    world through aesthetic and in functionality</p>
+                <p class="fade-tag">Developing things for entertainment purposes is fun but I want to make things for
+                    practicality too. I want to use software development as a means to improve the quality of life for
+                    those around me.</p>
+            </div>
+
+        </section>
+
+        <!--SKILLS SECTION-->
+        <section class="skill-container" style="" id="Skills">
+            <div id="Dynamic_Skill_List" class="dynamic-container">
+                <div id='menu_button' class="menu-toggle" onclick="changeBar(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <div id="Skill_Items" class="left-div">
+                    <div class="skill-object" id="Item_0">
+                        <h1 class="title-list">Unity3D & C#</h1>
+                        <div class=""></div>
+                        <p class="skill-disc-text">In my younger days, I went to university to learn game development
+                            and Unity 3D was the engine of choice. C# was the dominant language for Unity development at
+                            the time and I learned the core of OOP through making games in Unity.</p>
+                        <p>For the future, I will undoubtedly continue developing Unity indie projects with family and
+                            friends! Unity is great!</p>
+                        <h2>Proficiency:</h2>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar skill-value"></div>
+                        </div>
+                    </div>
+                    <div class="skill-object" id="Item_1">
+                        <h1 class="title-list">Python</h1>
+                        <div class=""></div>
+                        <p class="skill-disc-text">Python, and its huge support from developers and engineers alike,
+                            gives me a lot of enthusiasm on jumping back into working with Python.</p>
+                        <p>As I progress, I'll actively be using Python for many of my personal projects because of its
+                            general use for automating tasks in my day-to-day. I have a few idea I can't wait to try out
+                            with Python!</p>
+                        <h2>Proficiency:</h2>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar skill-value"></div>
+                        </div>
+                    </div>
+                    <div class="skill-object" id="Item_2">
+                        <h1 class="title-list">Web Dev</h1>
+                        <div class=""></div>
+                        <p class="skill-disc-text">Going through web development certifications, I've come across
+                            numerous tricks for manipulating the DOM via Javascript and HTML. While I'm not an expert, I
+                            used JS with a bit of jquery on a few peronal projects and some FCC projects.</p>
+                        <p>For the future, I mostly want to maintain my basic web development suite of skills whilst
+                            branching off to explore JS frameworks such as Angular and Vue.</p>
+                        <h2>Proficiency:</h2>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar skill-value"></div>
+                        </div>
+                    </div>
+                    <div class="skill-object" id="Item_3">
+                        <h1 class="title-list">React</h1>
+                        <div class=""></div>
+                        <p class="skill-disc-text">This is a library I'm eager to learn! While I have not studied React
+                            yet, I'm looking forward to crafting web applications with such a powerful tool.</p>
+                        <p>Looking forward, I have a good grasp of basic JS and how I can apply what I know of
+                            Javascript's core to other libraries upon looking over documentation.</p>
+                        <h2>Proficiency:</h2>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar skill-value"></div>
+                        </div>
+                    </div>
+                    <div class="skill-object" id="Item_4">
+                        <h1 class="title-list">WordPress</h1>
+                        <div class=""></div>
+                        <p class="skill-disc-text">In recent time, I've purchased my own web server to practice and
+                            develop wordpress websites for my family business! While I'm not entirely proficient at it,
+                            I have constructed results that show my improvement in creating web applications!</p>
+                        <p>My goals in the future, regarding WordPress, is to have a robust web development background
+                            with multiple ways of attacking the problem. I want to have as many tools at hand to
+                            adequately handle what my client may need.</p>
+                        <h2>Proficiency:</h2>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar skill-value"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="Skill_Icon_Tray" class="right-div">
+                    <!--ID: "SKILL_ICON_TRAY" NEEDS TO BE THIRD ELEMENT IN SIBLINGS CHAIN IN ORDER FOR JAVASCRIPT TO WORK-->
+                    <button id="Unity_Button" class="skill-button" type="button"
+                        onclick="skillDescriptionQueue(this, 0, 70)">Unity3D & C#</button>
+                    <button id="C_Button" class="skill-button" type="button"
+                        onclick="skillDescriptionQueue(this, 1, 40)">Python</button>
+                    <button id="Web_Button" class="skill-button" type="button"
+                        onclick="skillDescriptionQueue(this, 2, 70)">Web Dev.</button>
+                    <button id="React_Button" class="skill-button" type="button"
+                        onclick="skillDescriptionQueue(this, 3, 10)">React</button>
+                    <button id="Word_Button" class="skill-button" type="button"
+                        onclick="skillDescriptionQueue(this, 4, 50)">WordPress</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!--PROJECT SHOWCASE SECTION-->
+        <section style="pointer-events: all; flex-direction: row;" class="project-flex" id="projects">
+            <h2 style = "padding-top: 20px;" class="fade-tag">My Projects</h2>
+            <div style="display: none; padding-bottom: 20px;" class="fade-tag divider-line"></div>
+            <div style = "padding-top: 20px;"class = "project-grid-container">
+                <div class="project-box project-box-animation-out">
+                    <div class = "" style="background-color: aqua;"></div>
+                </div>
+                <div class="project-box project-box-animation-out"></div>
+                <div class="project-box project-box-animation-out"></div>
+                <div class="project-box project-box-animation-out"></div>
+                <div class="project-box project-box-animation-out"></div>
+                <div class="project-box project-box-animation-out"></div>
+                <div class="project-box project-box-animation-out"></div>
+
+            </div>
+        </section>
+        <section style="background-color: gray;" class="content-flex " id="content-block-4"></section>
+        <footer class="footer-content" id="footer"></footer>
+
+    </div>
+    <script src="main.js"></script>
+    <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
