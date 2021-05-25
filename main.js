@@ -9,17 +9,18 @@ let homeContainer = document.getElementById('welcome-section').getElementsByClas
 let skillList = document.getElementById("Welcome-Skills");
 let root = document.documentElement;
 let welcomeBlackOverlay = document.getElementById("welcome-overlay");
-let rect; //TESTING VIA GOGGLE CHROME MEMORY CAPTURE SO I MADE IT GLOBAL
+let rect; //rect  FOR PROJECT SECTION CLIENT POSITIONS IN DOM
 
 let fadeValue = 0;
 
 //RETRIEVE OBJECTS GLOBAL
 let contentBlocks = getObjects('*', "section");
 let fadeArray = getObjects('.', 'fade-tag');
-let items = document.querySelectorAll(".project-grid-container .project-box"); // GETS PROJECT SECTION BOXES
+let items = document.querySelectorAll(".project-grid-container .project-box, .exit-project-header"); // GETS PROJECT SECTION BOXES
 
 //CREATES 2D ARRAY AND ASSIGNS 2D ARRAY
 let alt2DArray = TwoDArray(contentBlocks.length, 10);
+let imageArray = ['https://imgur.com/a/AbCvTII'];
 assign2DArray();
 
 
@@ -57,6 +58,8 @@ window.addEventListener("scroll", () => {
     fadeQueue(contentBlocks, scrollValue);
     toggleDisplayWelcome(welcomeBlackOverlay, scrollValue);
     toggleProjectAnimation();
+    backgroundAnimationQueue("#projects", 0);
+
 
     /* GENERAL SCROLL DEBUGGING */
 
@@ -130,7 +133,7 @@ function assign2DArray() { //THIS ASSIGNS CLASSES WITH ".fade-tag" TO AN ARRAY T
 
 //EARLY FADE FUNCTION FOR ABOUT ME SECTION
 function fadeQueue(arr, scroll) {
-    if (scroll > arr[fadeValue].getBoundingClientRect().bottom - 500) {
+    if (scroll > arr[fadeValue].getBoundingClientRect().top  + 400) {
         for (let j = 0; j < alt2DArray[fadeValue].length; j++) {
             alt2DArray[fadeValue][j].classList.add("fade-in");
             alt2DArray[fadeValue][j].style.display = "block";
@@ -158,7 +161,7 @@ function toggleProjectAnimation() {
             if (!items[i].classList.contains("project-box-animation-in")) {
                 items[i].classList.remove("project-box-animation-out");
                 items[i].classList.add("project-box-animation-in");
-                items[i].children[0].classList.add("project-box-tran-toggle");
+                //items[i].children[0].classList.add("project-box-tran-toggle");
                 
                 
 
@@ -166,7 +169,7 @@ function toggleProjectAnimation() {
         } else if (items[i].classList.contains("project-box-animation-in")) {
             items[i].classList.remove("project-box-animation-in");
             items[i].classList.add("project-box-animation-out");
-            items[i].children[0].classList.remove("project-box-tran-toggle");
+            //items[i].children[0].classList.remove("project-box-tran-toggle");
             
 
         }
@@ -184,6 +187,17 @@ function TwoDArray(row, length) {
         array[i] = new Array(length);
     }
     return array;
+}
+
+function backgroundAnimationQueue (elementIdentifier, selectionOfBGArrayNum, opacityNumber) {
+    let element = (elementIdentifier.charAt(0) = ".") ? document.getElementsByClassName(elementIdentifier.substring(1)) : document.getElementById(elementIdentifier.substring(1));
+    let positionInView = element.getBoundingClientRect().top - 100;
+    if(scrollValue >= positionInView) {
+        element.style.background = "linear-gradient(rgba(0, 0, 0, 0.7) 100%, rgba(0, 0, 0, 0.7) 100%), url(" + imageArray[selectionOfBGArrayNum] + ");";
+        element.style.backgroundPosition = "center";
+    }
+    
+
 }
 
 function changeBar(element) { //THIS HANDLES THE MOBILE VERSION FO THE SKILL SELECTOR WITH A MODAL OVERLAY TO CLICK AND CHOOSE THE SKILL TO SEE

@@ -21,8 +21,8 @@
 <body>
     <div class="tun-container" id="main-container">
         <nav class="navbar-sticky" id='navbar'>
-            <a href="#main-container">Placeholder Signature</a>
-            <div style="display: flex; justify-content: space-between; width: 60%;">
+            <a href="#main-container">Christopher Scott</a>
+            <div class = "" style="display: flex; justify-content: space-between; width: 60%;">
                 <a href="#About_Me">About Me</a>
                 <a href="#Skills">Skills</a>
                 <a href="#projects">Projects</a>
@@ -34,15 +34,15 @@
 
         <div id="welcome-overlay" style="position: fixed; height: 100%; width: 100%; top: 0px; left: 0px;">
             <div id="welcome-section" class="content-flex">
-                <div class="space-flex" id="foreground-content_Title">
-                    <h1 class="line-header">Hi, I'm Tundra</h1>
+                <div class="slide-in-fade-child space-flex" id="foreground-content_Title">
+                    <h1 class="line-header">Hi, I'm Chris</h1>
                     <p>Software Developer & UX/UI Designer</p>
                 </div>
-                <div style="flex-direction: row; display: block;" class="space-flex" id="foreground-content_Social">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="" class="fa fa-twitter"></a>
-                    <a href="" class="fa fa-linkedin"></a>
-                    <a href="" class="fa fa-google"></a>
+                <div style="flex-direction: row; display: block; overflow: hidden;" class="space-flex fade-in-transition" id="foreground-content_Social">
+                    <a href="#" class="fa fa-facebook layered-slide-transition"></a>
+                    <a href="" class="fa fa-twitter layered-slide-transition"></a>
+                    <a href="" class="fa fa-linkedin layered-slide-transition"></a>
+                    <a href="" class="fa fa-google layered-slide-transition"></a>
                 </div>
             </div>
         </div>
@@ -164,9 +164,16 @@
             <h2 style = "padding-top: 20px;" class="fade-tag">My Projects</h2>
             <div style="display: none; padding-bottom: 20px;" class="fade-tag divider-line"></div>
             <div style = "padding-top: 20px;"class = "project-grid-container">
-                <div class="project-box project-box-animation-out">
-                    <div class = "" style="background-color: aqua;"></div>
-                </div>
+                <a style = "" href ="https://codepen.io/MidnightTundra/pen/gERrGj" class="project-box project-box-animation-out">
+                        <img style = "width: 150%; height: 150%; top: 0px; left: -220px;"src="https://assets.codepen.io/1758457/internal/screenshots/pens/gERrGj.default.png">
+                        <h2 style="">Playstation Mock Site</h2>
+                        <p>A small project showing a playsation landing page</p>
+                </a>
+                <a style = "" href ="https://codepen.io/MidnightTundra/pen/gERrGj" class="project-box project-box-animation-out">
+                    <img style = "width: 150%; height: 150%; top: 0px; left: -220px;"src="https://assets.codepen.io/1758457/internal/screenshots/pens/gERrGj.default.png">
+                    <h2 style="">Playstation Mock Site</h2>
+                    <p>A small project showing a playsation landing page</p>
+            </a>
                 <div class="project-box project-box-animation-out"></div>
                 <div class="project-box project-box-animation-out"></div>
                 <div class="project-box project-box-animation-out"></div>
@@ -175,6 +182,7 @@
                 <div class="project-box project-box-animation-out"></div>
 
             </div>
+            <h2 class="exit-project-header project-box-animation-out">... More to come!</h2>
         </section>
         <section style="background-color: gray;" class="content-flex " id="content-block-4"></section>
         <footer class="footer-content" id="footer"></footer>
