@@ -20,7 +20,9 @@ let items = document.querySelectorAll(".project-grid-container .project-box, .ex
 
 //CREATES 2D ARRAY AND ASSIGNS 2D ARRAY
 let alt2DArray = TwoDArray(contentBlocks.length, 10);
-let imageArray = ['https://imgur.com/a/AbCvTII'];
+let imageArray = ['https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg',
+    'https://images.unsplash.com/photo-1583224874284-c7aeb59863d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+];
 assign2DArray();
 
 
@@ -37,23 +39,22 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("scroll", () => {
-    
+
     let j = 1;
     let welcome = document.getElementById('welcome-section');
     scrollValue = $(window).scrollTop();
     TranslateBG(root, scrollValue); // MOVES BACKGROUND
     welcome.style.opacity = 1 * j;
     if (scrollValue > flipPoint.getBoundingClientRect().top + 800) {
-        //console.log('condition met!');
         nav.classList.add("change-bg-nav");
         homeContainer[0].style.display = "none";
         homeContainer[1].style.display = "none";
-        //skillList.style.display = "flex";
+
     } else {
         nav.classList.remove("change-bg-nav");
         homeContainer[0].style.display = "block";
         homeContainer[1].style.display = "block";
-        //skillList.style.display = "none";
+
     }
     fadeQueue(contentBlocks, scrollValue);
     toggleDisplayWelcome(welcomeBlackOverlay, scrollValue);
@@ -99,7 +100,7 @@ function skillDescriptionQueue(element, arrNum, ratingNum) { //FUNCTION FOR MANI
 }
 
 function toggleDisplayWelcome(element, scrollVal) { //I MADE A BLACK, FIXED OVERLAY. NEEDS TO BE SWITCHED OFF AFTER SCROLLING DOWN TO NOT AFFECT OTHER SECTIONS
-    if (scrollVal < 1000) {
+    if (scrollVal < screen.height) {
         element.style.display = "block";
     } else {
         element.style.display = "none";
@@ -133,7 +134,7 @@ function assign2DArray() { //THIS ASSIGNS CLASSES WITH ".fade-tag" TO AN ARRAY T
 
 //EARLY FADE FUNCTION FOR ABOUT ME SECTION
 function fadeQueue(arr, scroll) {
-    if (scroll > arr[fadeValue].getBoundingClientRect().top  + 400) {
+    if (scroll > arr[fadeValue].getBoundingClientRect().top + 400) { //GETS POSITION IN WINDOW CLIENT OF EACH OBJECT TO DETERMINE WHERE IT NEEDS TO APPLY A FADE IN CLASS. EACH
         for (let j = 0; j < alt2DArray[fadeValue].length; j++) {
             alt2DArray[fadeValue][j].classList.add("fade-in");
             alt2DArray[fadeValue][j].style.display = "block";
@@ -149,9 +150,8 @@ function checkForElementsInView(element) {
 
     return (
         Math.floor(rect.top) > -100 &&
-        //Math.floor(rect.left) > -300 &&
-        Math.floor(rect.bottom) < (/*Math.floor(window.innerHeight)  ||*/ Math.floor(document.documentElement.clientHeight)) //&&
-        //Math.floor(rect.right) < (/*Math.floor(window.innerWidth) ||*/ Math.floor(document.documentElement.clientWidth))
+        Math.floor(rect.bottom) < (  Math.floor(document.documentElement.clientHeight)) 
+        
     );
 }
 
@@ -162,15 +162,15 @@ function toggleProjectAnimation() {
                 items[i].classList.remove("project-box-animation-out");
                 items[i].classList.add("project-box-animation-in");
                 //items[i].children[0].classList.add("project-box-tran-toggle");
-                
-                
+
+
 
             }
         } else if (items[i].classList.contains("project-box-animation-in")) {
             items[i].classList.remove("project-box-animation-in");
             items[i].classList.add("project-box-animation-out");
             //items[i].children[0].classList.remove("project-box-tran-toggle");
-            
+
 
         }
     }
@@ -189,14 +189,16 @@ function TwoDArray(row, length) {
     return array;
 }
 
-function backgroundAnimationQueue (elementIdentifier, selectionOfBGArrayNum, opacityNumber) {
-    let element = (elementIdentifier.charAt(0) = ".") ? document.getElementsByClassName(elementIdentifier.substring(1)) : document.getElementById(elementIdentifier.substring(1));
-    let positionInView = element.getBoundingClientRect().top - 100;
-    if(scrollValue >= positionInView) {
-        element.style.background = "linear-gradient(rgba(0, 0, 0, 0.7) 100%, rgba(0, 0, 0, 0.7) 100%), url(" + imageArray[selectionOfBGArrayNum] + ");";
-        element.style.backgroundPosition = "center";
+function backgroundAnimationQueue(elementIdentifier, selectionOfBGArrayNum, opacityNumber) {
+    let element = (elementIdentifier.charAt(0) == ".") ? document.getElementsByClassName(elementIdentifier.substring(1)) : document.getElementById(elementIdentifier.substring(1));
+    let positionInView = element.getBoundingClientRect().top + 500;
+    if (scrollValue >= positionInView) {
+        //console.log("passed!" + element);
+        element.style.background = "linear-gradient(rgba(0, 0, 0, 0.9) 100%, rgba(0, 0, 0, 0.7) 100%), url(" + imageArray[selectionOfBGArrayNum] + ")";
+        element.style.backgroundPosition = '0px ' + ((scrollValue * 0.5) - 400) + 'px';
+        element.style.backgroundSize = "cover";
     }
-    
+
 
 }
 

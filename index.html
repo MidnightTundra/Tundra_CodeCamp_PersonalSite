@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Personal Website by Tundra</title>
@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
 
 
 </head>
@@ -22,11 +25,11 @@
     <div class="tun-container" id="main-container">
         <nav class="navbar-sticky" id='navbar'>
             <a href="#main-container">Christopher Scott</a>
-            <div class = "" style="display: flex; justify-content: space-between; width: 60%;">
+            <div class="" style="display: flex; justify-content: space-between; width: 60%;">
                 <a href="#About_Me">About Me</a>
                 <a href="#Skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#Extras">Extras</a>
+                <a href="#misc">Extras</a>
             </div>
         </nav>
         <!--Pushes page down by viewport height (vertical resolution size)-->
@@ -38,7 +41,8 @@
                     <h1 class="line-header">Hi, I'm Chris</h1>
                     <p>Software Developer & UX/UI Designer</p>
                 </div>
-                <div style="flex-direction: row; display: block; overflow: hidden;" class="space-flex fade-in-transition" id="foreground-content_Social">
+                <div style="flex-direction: row; display: block; overflow: hidden;"
+                    class="space-flex fade-in-transition" id="foreground-content_Social">
                     <a href="#" class="fa fa-facebook layered-slide-transition"></a>
                     <a href="" class="fa fa-twitter layered-slide-transition"></a>
                     <a href="" class="fa fa-linkedin layered-slide-transition"></a>
@@ -67,7 +71,7 @@
         </section>
 
         <!--SKILLS SECTION-->
-        <section class="skill-container" style="" id="Skills">
+        <section class="skill-container" id="Skills">
             <div id="Dynamic_Skill_List" class="dynamic-container">
                 <div id='menu_button' class="menu-toggle" onclick="changeBar(this)">
                     <div class="bar1"></div>
@@ -161,30 +165,48 @@
 
         <!--PROJECT SHOWCASE SECTION-->
         <section style="pointer-events: all; flex-direction: row;" class="project-flex" id="projects">
-            <h2 style = "padding-top: 20px;" class="fade-tag">My Projects</h2>
+            <h2 style="padding-top: 20px;" class="fade-tag">My Projects</h2>
             <div style="display: none; padding-bottom: 20px;" class="fade-tag divider-line"></div>
-            <div style = "padding-top: 20px;"class = "project-grid-container">
-                <a style = "" href ="https://codepen.io/MidnightTundra/pen/gERrGj" class="project-box project-box-animation-out">
-                        <img style = "width: 150%; height: 150%; top: 0px; left: -220px;"src="https://assets.codepen.io/1758457/internal/screenshots/pens/gERrGj.default.png">
-                        <h2 style="">Playstation Mock Site</h2>
-                        <p>A small project showing a playsation landing page</p>
-                </a>
-                <a style = "" href ="https://codepen.io/MidnightTundra/pen/gERrGj" class="project-box project-box-animation-out">
-                    <img style = "width: 150%; height: 150%; top: 0px; left: -220px;"src="https://assets.codepen.io/1758457/internal/screenshots/pens/gERrGj.default.png">
-                    <h2 style="">Playstation Mock Site</h2>
+            <div style="padding-top: 20px;" class="project-grid-container">
+                <a href="https://codepen.io/MidnightTundra/pen/gERrGj"
+                    class="project-box project-box-animation-out project-tile">
+                    <img style="width: 120%; height: 120%; top: 0px; left: -50px;"
+                        src="https://assets.codepen.io/1758457/internal/screenshots/pens/gERrGj.default.png?fit=cover&format=auto&ha=true&height=540&quality=75&v=2&version=1622035707&width=960">
+                    <h2>Playstation Mock Site</h2>
                     <p>A small project showing a playsation landing page</p>
-            </a>
-                <div class="project-box project-box-animation-out"></div>
-                <div class="project-box project-box-animation-out"></div>
-                <div class="project-box project-box-animation-out"></div>
-                <div class="project-box project-box-animation-out"></div>
-                <div class="project-box project-box-animation-out"></div>
-                <div class="project-box project-box-animation-out"></div>
-
+                </a>
+                <a href="https://codepen.io/MidnightTundra/pen/zXqjbG"
+                    class="project-box project-box-animation-out project-tile">
+                    <img style="width: 100%; height: 100%; top: 0px; left: 0px;"
+                        src="https://assets.codepen.io/1758457/internal/screenshots/pens/zXqjbG.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1622035935&width=960">
+                    <h2>Technical Document</h2>
+                    <p>A dynamic technical document for C# and object-oriented programming</p>
+                </a>
+                <a href="https://codepen.io/MidnightTundra/pen/NyvXaB"
+                    class="project-box project-box-animation-out project-tile">
+                    <img style="width: 100%; height: 100%; top: 0px; left: 0px;"
+                        src="https://assets.codepen.io/1758457/internal/screenshots/pens/NyvXaB.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1622294027&width=960">
+                    <h2>Tribute Page</h2>
+                    <p>Metal Gear Solid tribute page of one of my favorite game series. A time-line for this great game!
+                    </p>
+                </a>
             </div>
-            <h2 class="exit-project-header project-box-animation-out">... More to come!</h2>
+            <div style="">
+                <h2 class="exit-project-header project-box-animation-out">... Work In Progress!</h2>
+            </div>
+            
         </section>
-        <section style="background-color: gray;" class="content-flex " id="content-block-4"></section>
+        <section class="extra-sec" id="misc">
+            <a href = "https://github.com/MidnightTundra" class="extra-link-box" id = "github-link">  
+                <img style="width: 130px;" src="https://www.pngarts.com/files/8/Github-Logo-Transparent-Background-PNG.png">
+                <h2>Github</h2>
+            </a>
+            <a href = "https://codepen.io/MidnightTundra" class="extra-link-box" id="profile-link">  
+                <img src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Codepen-512.png">
+                <h2 style="padding-left: 35px;">Codepen</h2>
+            </a>
+            
+        </section>
         <footer class="footer-content" id="footer"></footer>
 
     </div>
